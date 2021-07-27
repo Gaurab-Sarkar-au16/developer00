@@ -5,11 +5,21 @@ class AddContact extends Component {
     name: "",
     email: "",
   };
+
+  add = (e) => {
+    e.preventDefault()
+    if(this.state.name === "" || this.state.email ==="") {
+      alert("All the fields are mandatory!")
+      return
+    }
+    console.log(this.state)
+  }
+
   render() {
     return (
       <div className="ui main">
         <h2>Add Contact</h2>
-        <form className="ui form">
+        <form className="ui form" onSubmit={this.add}>
           <div className="field">
             <label>Name</label>
             <input
