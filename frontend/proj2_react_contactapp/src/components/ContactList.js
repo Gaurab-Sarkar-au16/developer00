@@ -5,7 +5,7 @@ const ContactList = (props) => {
 
   const renderContactList = props.contacts.map((contact) => {
     return (
-      <ContactCard key={contact.id} contact={contact}/>
+      <ContactCard key={Math.random.toString()} contact={contact}/>
     )
   })
 
