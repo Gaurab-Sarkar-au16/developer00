@@ -10,11 +10,12 @@ const orderRoutes = require("./api/routes/orders");
 mongoose.connect(
   "mongodb+srv://gaurab2193:" +
     process.env.MONGO_ATLAS_PW +
-    "@cluster0.szxzs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"    
+    "@cluster0.szxzs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 );
-mongoose.Promise = global.Promise
+mongoose.Promise = global.Promise;
 
 app.use(morgan("dev"));
+app.use("/uploads", express.static("uploads"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
