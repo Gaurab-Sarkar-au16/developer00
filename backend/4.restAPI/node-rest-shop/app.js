@@ -12,6 +12,7 @@ mongoose.connect(
     process.env.MONGO_ATLAS_PW +
     "@cluster0.szxzs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"    
 );
+mongoose.Promise = global.Promise
 
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));
