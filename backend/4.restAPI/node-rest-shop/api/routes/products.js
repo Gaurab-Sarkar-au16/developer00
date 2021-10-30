@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 const Product = require("../models/product");
 const multer = require("multer");
 
+const checkAuth = require("../middleware/check-auth");
+
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, "./uploads/");
@@ -68,7 +70,7 @@ router.get("/", (req, res, next) => {
     });
 });
 
-router.post("/", upload.single("productImage"), (req, res, next) => {
+router.post("/", checkAuth, upload.single("productImage"), (req, res, next) => {
   console.log(req.file);
   const product = new Product({
     _id: new mongoose.Types.ObjectId(),
@@ -104,7 +106,7 @@ router.post("/", upload.single("productImage"), (req, res, next) => {
 router.get("/:productId", (req, res, next) => {
   const id = req.params.productId;
   Product.findById(id)
-    .select('name price _id productImage')
+    .select("name price _id productImage")
     .then((doc) => {
       console.log("From database", doc);
       if (doc) {
