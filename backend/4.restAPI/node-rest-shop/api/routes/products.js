@@ -78,6 +78,7 @@ router.post("/", checkAuth, upload.single("productImage"), (req, res, next) => {
     price: req.body.price,
     productImage: req.file.path,
   });
+  
   product
     .save()
     .then((result) => {
