@@ -100,9 +100,7 @@ router.post("/", checkAuth, upload.single("productImage"), (req, res, next) => {
       console.log(err);
       res.status(500).json({
         error: err,
-        // help in error
-      });
-       
+      });       
     });
 });
 
