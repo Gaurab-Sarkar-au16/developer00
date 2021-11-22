@@ -4,3 +4,9 @@
 .calling a function inside another function is called callback, it creates connection between functions
 
 .callback froms children, promises uses instruction i.e first this "then" second
+
+.three stages of promise: pending, resolve, reject
+.resolve, return
+
+.three things in promises: then, catch, finally
+.three things in async/await: try, catch, finally
