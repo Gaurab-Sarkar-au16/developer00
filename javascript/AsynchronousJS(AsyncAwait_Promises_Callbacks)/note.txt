@@ -2,3 +2,5 @@
 .setTimeout is an asynchronus function
 
 .calling a function inside another function is called callback, it creates connection between functions
+
+.callback froms children, promises uses instruction i.e first this "then" second
