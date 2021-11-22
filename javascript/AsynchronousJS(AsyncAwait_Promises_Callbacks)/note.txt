@@ -1,0 +1,4 @@
+.javascript runs from top to the bottom
+.setTimeout is an asynchronus function
+
+.calling a function inside another function is called callback, it creates connection between functions
