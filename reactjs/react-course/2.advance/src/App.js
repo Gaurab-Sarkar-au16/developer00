@@ -3,13 +3,15 @@ import { Switch, Route } from "react-router-dom";
 import AllMeetupsPage from "./pages/AllMeetups";
 import NewMeetupPage from "./pages/NewMeetup";
 import FavoritesPage from "./pages/Favorites";
+import MainNavigation from "./components/layout/MainNavigation";
 
 function App() {
   return (
     <div>
+      <MainNavigation />
       <Switch>
         <Route path="/" exact>
-          {/* we ccan also write exact={true} */}
+          {/* we can also write exact={true} */}
           <AllMeetupsPage />
         </Route>
         <Route path="/new-meetup">
