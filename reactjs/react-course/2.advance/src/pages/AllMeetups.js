@@ -34,7 +34,7 @@ function AllMeetupsPage() {
         return response.json();
       })
       .then((data) => {
-        console.log(data)
+        // console.log(data)
         const meetups = []
 
         for (const key in data) {
@@ -44,7 +44,7 @@ function AllMeetupsPage() {
           }
           meetups.push(meetup)
         }
-        console.log(meetups)
+        // console.log(meetups)
         setIsLoading(false);
         setLoadedMeetups(meetups);
       });
