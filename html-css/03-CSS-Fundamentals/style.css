@@ -4,6 +4,7 @@
   padding: 0;
 }
 
+/* PAGE SECTIONS */
 body {
   color: #444;
   font-family: sans-serif;
@@ -11,7 +12,7 @@ body {
   border-top: 10px solid #1098ad;
 }
 
-.container{
+.container {
   width: 800px;
   /* margin-left: auto;
   margin-right: auto; */
@@ -31,7 +32,7 @@ body {
   padding: 20px 40px;
   margin-bottom: 60px;
   /* adding dimension */
-  height: 80px;
+  /* height: 80px; */
 }
 
 nav {
@@ -46,6 +47,7 @@ article {
   margin-bottom: 40px;
 }
 
+/* SMALLER ELEMENTS */
 /* element selector: if name of the element or tag is used to define css properties */
 /* border property*/
 aside {
@@ -127,6 +129,7 @@ ol {
 li {
   font-size: 20px;
   margin-bottom: 10px;
+  /* display: inline; */
 }
 
 li:last-child {
@@ -183,13 +186,13 @@ li:last-child {
   font-style: italic;
 }
 
-li:nth-child(2) {
-  /* color: crimson; */
-}
+/* li:nth-child(2) {
+  color: crimson;
+} */
 
-li:nth-child(odd) {
-  /* color: aqua; */
-}
+/* li:nth-child(odd) {
+  color: aqua;
+} */
 
 /* Misconception: this won't work */
 article p:first-child {
@@ -239,6 +242,22 @@ a:active {
 
 .post-img {
   /* percentage of the width of the parent container, here header is the parent element whose width is the entire page width */
-  width:100%;
+  width: 100%;
   height: auto;
+}
+
+nav a:link {
+  /* background-color: orangered;  
+  margin: 20px;
+  padding: 20px;
+
+  display: block; */
+
+  margin-right: 30px;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+nav a:link:last-child {
+  margin-right: 0;
 }
