@@ -39,6 +39,7 @@ body {
 
 nav {
   font-size: 18px;
+  text-align: center;
 }
 
 article {
@@ -283,9 +284,9 @@ h1::first-letter {
 }
 
 /* ADJACENT SELECTOR */
-h3 + p::first-line {
+/* h3 + p::first-line { */
   /* color: red; */
-}
+/* } */
 
 h2{
   position: relative;
