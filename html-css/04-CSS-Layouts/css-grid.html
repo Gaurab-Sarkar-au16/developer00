@@ -73,7 +73,7 @@
         /* STARTER */
         /* display:none; */
         font-family: sans-serif;
-        background-color: black;
+        background-color: #b2bec3;
         font-size: 40px;
         margin: 100px;
 
@@ -81,6 +81,19 @@
         height: 600px;
 
         /* CSS GRID */
+        display: grid;
+        grid-template-columns: 125px 200px 125px;
+        grid-template-rows: 250px 100px;
+        gap: 50px;
+
+        /* Aligning tracks inside container: distribute empty space */
+        justify-content: center;
+        /* justify-content: space-between; */
+        align-content: center;
+
+        /* Aligning items INSIDE cells: moving items around inside the cells */
+        align-items: center;
+        justify-items: center;
       }
     </style>
   </head>
@@ -105,4 +118,5 @@
       <div class="el el--7">(7)</div>
     </div>
   </body>
-</html>
+</html>  
+
