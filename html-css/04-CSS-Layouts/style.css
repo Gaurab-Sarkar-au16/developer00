@@ -37,9 +37,9 @@ nav {
   /* text-align: center; */
 }
 
-article {
+/* article { */
   /* margin-bottom: 60px; */
-}
+/* } */
 
 .post-header {
   margin-bottom: 40px;
@@ -382,19 +382,12 @@ aside{
  grid-template-columns: 1fr 300px;
  column-gap: 75px;
  row-gap: 60px;
+ align-items: start;
 }
 
 .main-header{
   /* grid-column: 1 / span2; */
   grid-column: 1 / -1;
-}
-
-article{
-
-}
-
-aside{
-
 }
 
 footer{
