@@ -42,8 +42,11 @@
         background-color: #087f5b;
         margin: 100px auto;
         width: 800px;
-        padding: 32px;
+        /* padding: 32px;
         padding-left: 86px;
+        padding-right: 48px; */
+        padding: 32px 48px 32px 86px;
+
         border-radius: 8px;
         position: relative;
 
@@ -56,24 +59,24 @@
         height: 200px;
         border-radius: 8px;
         transform: scale(1.5);
-        box-shadow: 0 12px 24px rgba(0,0,0,0.25)
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
       }
 
-      .testimonial-text{
+      .testimonial-text {
         font-size: 18px;
         font-weight: 500;
         line-height: 1.5;
         margin-bottom: 32px;
-        color:#e6fcf5;
+        color: #e6fcf5;
       }
 
-      .testimonial-author{
+      .testimonial-author {
         font-size: 14px;
         margin-bottom: 4px;
         color: #c3fae8;
       }
 
-      .testimonial-job{
+      .testimonial-job {
         font-size: 12px;
         color: #c3fae8;
       }
@@ -84,12 +87,57 @@
         border: none;
         height: 40px;
         width: 40px;
+        border-radius: 50%;
         position: absolute;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
-      .btn-icon{
+
+      .btn--left {
+        left: 0;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .btn--right {
+        right: 0;
+        top: 50%;
+        transform: translate(50%, -50%);
+      }
+
+      .btn-icon {
         width: 24px;
         height: 24px;
+        stroke: #087f5b;
       }
+
+      .dots {
+        position:absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%, 32px);
+
+        display: flex;
+        gap: 12px;
+      }
+
+      .dot {
+        height: 12px;
+        width: 12px;
+        background-color: #fff;
+        border: 2px solid #087f5b;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .dot--fill {
+        background-color: #087f5b;
+      }
+
     </style>
   </head>
   <body>
@@ -99,13 +147,13 @@
         <p class="testimonial-text">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, at
           tenetur. Deserunt voluptatem ipsa voluptatibus tempore architecto
-          tenetur eos reprehenderit itaque laborum! 
+          tenetur eos reprehenderit!
         </p>
         <p class="testimonial-author">Maria de Almeida</p>
         <p class="testimonial-job">Senior Product Manager at EDP Comercial</p>
       </blockquote>
 
-      <button class="btn">
+      <button class="btn btn--left">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="btn-icon"
@@ -121,7 +169,8 @@
           />
         </svg>
       </button>
-      <button class="btn">
+
+      <button class="btn btn--right">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="btn-icon"
@@ -137,6 +186,12 @@
           />
         </svg>
       </button>
+      <div class="dots">
+        <button class="dot dot--fill">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+      </div>
     </div>
   </body>
 </html>
