@@ -61,7 +61,7 @@ body {
 /* GENERAL REUSABLE COMPONENTS */
 /**************************************/
 
-.container{
+.container {
   max-width: 120rem;
   padding: 0 3.2rem;
   margin: 0 auto;
@@ -70,26 +70,27 @@ body {
 .grid {
   display: grid;
   column-gap: 6.4rem;
-  row-gap: 9.6rem; 
+  row-gap: 9.6rem;
 }
 
-.grid--2-cols{
+.grid--2-cols {
   grid-template-columns: repeat(2, 1fr);
 }
 
-.grid--3-cols{
+.grid--3-cols {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.grid--4-cols{
+.grid--4-cols {
   grid-template-columns: repeat(4, 1fr);
 }
 
-.grid--center-v{
+.grid--center-v {
   align-items: center;
 }
 
-.heading-primary, .heading-secondary{
+.heading-primary,
+.heading-secondary {
   font-size: 6.2rem;
   color: #333;
   letter-spacing: -0.5px;
@@ -101,24 +102,24 @@ body {
   margin-bottom: 3.2rem;
 }
 
-.heading-secondary{
+.heading-secondary {
   font-size: 4.4rem;
   line-height: 1.2;
   margin-bottom: 9.6rem;
 }
 
-.heading-tertiary{
+.heading-tertiary {
   font-size: 3rem;
   line-height: 1.2;
   margin-bottom: 3.2rem;
 }
 
-.subheading{
+.subheading {
   display: block;
   font-size: 1.6rem;
   font-weight: 500;
-  color:#cf711f;
-  text-transform:uppercase;
+  color: #cf711f;
+  text-transform: uppercase;
   margin-bottom: 1.6rem;
   letter-spacing: 0.75px;
 }
@@ -132,7 +133,7 @@ body {
   font-weight: 600;
   padding: 1.6rem 3.2rem;
   border-radius: 9px;
-  transition: background-color 0.3s;
+  transition: all 0.3s;
 }
 
 .btn--full,
@@ -162,10 +163,35 @@ body {
   box-shadow: inset 0 0 0 3px #fff;
 }
 
+.link:link,
+.link:visited {
+  display: inline-block;
+  color: #e67e22;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  transition: all 0.3s;
+}
+
+.link:hover,
+.link:active{
+  color: #cf711f;
+  border-bottom: 1px solid transparent;
+}
+
+/* HELPERS/SETTING CLASSES */
 .margin-right-sm {
   margin-right: 1.6rem !important;
 }
 
-strong{
-  font-weight:500;
+.margin-bottom-md {
+  margin-bottom: 4.8rem !important;
+}
+
+.center-text{
+  text-align: center;
+}
+
+strong {
+  font-weight: 500;
 }
