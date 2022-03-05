@@ -14,7 +14,7 @@ btnNavEl.addEventListener("click", function () {
 });
 
 ///////////////////////////////////////////////////////////
-//Smooth Scrolling animation:
+// Smooth Scrolling animation
 const allLinks = document.querySelectorAll("a:link");
 allLinks.forEach(function (link) {
   link.addEventListener("click", function (e) {
@@ -40,6 +40,29 @@ allLinks.forEach(function (link) {
       headerEl.classList.toggle("nav-open");
   });
 });
+
+///////////////////////////////////////////////////////////
+// Sticky navigation
+const sectionHeroEl = document.querySelector(".section-hero");
+
+const obs = new IntersectionObserver(
+  function (entries) {
+    const ent = entries[0];
+    console.log(ent);
+    if (ent.isIntersecting === false) {
+      document.body.classList.add("sticky");
+    } 
+    if (ent.isIntersecting === true) {
+      document.body.classList.remove("sticky");
+    }
+  },
+  {
+    root: null,
+    threshold: 0,
+    rootMargin: "-80px",
+  }
+);
+obs.observe(sectionHeroEl);
 
 ///////////////////////////////////////////////////////////
 // Fixing flexbox gap property missing in some Safari versions
