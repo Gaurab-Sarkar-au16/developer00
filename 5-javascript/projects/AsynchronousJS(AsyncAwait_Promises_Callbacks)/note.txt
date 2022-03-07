@@ -1,0 +1,15 @@
+.javascript runs from top to the bottom
+.setTimeout is an asynchronus function
+
+.calling a function inside another function is called callback, it creates connection between functions
+
+.callback froms children, promises uses instruction i.e first this "then" second
+
+.three stages of promise: pending, resolve, reject
+.resolve, return
+
+.three things in promises: then, catch, finally
+.three things in async/await: try, catch, finally
+
+link:
+https://www.freecodecamp.org/news/javascript-async-await-tutorial-learn-callbacks-promises-async-await-by-making-icecream/

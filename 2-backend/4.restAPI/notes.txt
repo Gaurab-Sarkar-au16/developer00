@@ -1,0 +1,9 @@
+REST-API: Representational State Transfer - Application Programming Interface
+
+server returns html files, rest api not needed.
+server returns data, rest api needed.
+
+restful api in the end is a normal server
+restful api are stateless backends
+
+CORS error: Cross-Origin Resource Sharing

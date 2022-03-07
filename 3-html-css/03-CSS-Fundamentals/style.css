@@ -1,0 +1,306 @@
+* {
+  /* border-top: 10px solid #1098ad; */
+  margin: 0;
+  padding: 0;
+}
+
+/* PAGE SECTIONS */
+body {
+  color: #444;
+  font-family: sans-serif;
+
+  border-top: 10px solid #1098ad;
+
+  position: relative;
+}
+
+.container {
+  width: 800px;
+  /* margin-left: auto;
+  margin-right: auto; */
+  margin: 0 auto;
+}
+
+/* background color can be changed using this property */
+.main-header {
+  background-color: #f7f7f7;
+  /* padding on all side */
+  /* padding: 20px; */
+  /* padding for left and right */
+  /* padding-left: 40px;
+  padding-right: 40px; */
+
+  /* padding short hand: 20px for top and bottom, 40px for left and right*/
+  padding: 20px 40px;
+  margin-bottom: 60px;
+  /* adding dimension */
+  /* height: 80px; */
+}
+
+nav {
+  font-size: 18px;
+  text-align: center;
+}
+
+article {
+  margin-bottom: 60px;
+}
+
+.post-header {
+  margin-bottom: 40px;
+}
+
+/* SMALLER ELEMENTS */
+/* element selector: if name of the element or tag is used to define css properties */
+/* border property*/
+aside {
+  background-color: #f7f7f7;
+  /* short hand property, three properties border-width, border-style, border-color is used inside this one*/
+  /* border: 5px solid #1098ad; */
+
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+  /* border left and right also available to seperately style them */
+
+  /* padding top and bottom 50px, padding left right 0px */
+  padding: 50px 0;
+
+  /* adding dimension */
+  width: 500px;
+}
+
+/* h1,
+h2,
+h3,
+h4,
+p,
+li {
+  font-family: sans-serif;
+  color: #444;
+} */
+
+h1,
+h2,
+h3 {
+  color: #1098ad;
+}
+
+h1 {
+  /* color: blue; */
+  /* text will be 26 pixel of the screen size */
+  /* text size by default is 16px */
+  font-size: 26px;
+
+  /* lowercase or uppercase */
+  text-transform: uppercase;
+
+  /* style of the font */
+  font-style: italic;
+}
+
+h2 {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+h3 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+h4 {
+  font-size: 20px;
+  text-transform: uppercase;
+  /* sets it to the center of its parent element */
+  text-align: center;
+}
+
+p {
+  font-size: 22px;
+  /* height between the lines */
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+ul,
+ol {
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+
+li {
+  font-size: 20px;
+  margin-bottom: 10px;
+  /* display: inline; */
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+/* decendant selector: paragraph of footer */
+footer p {
+  font-size: 16px;
+}
+
+/* nested decendant selector */
+/* article header p {
+  font-style: italic;
+} */
+
+/* id selector */
+#author {
+  font-style: italic;
+  font-size: 18px;
+}
+
+#copyright {
+  font-size: 16px;
+}
+
+/* class selector */
+/* difference between class and id selector is that we are not allowed to repeat id names */
+/* we use classes and avoid using ids */
+
+/* use of '-' instead of '_' is the norm in css naming */
+.related-author {
+  font-size: 18px;
+  /* wieght of the font */
+  font-weight: bold;
+}
+
+/* removing bullet points in the unordered list */
+.related {
+  list-style: none;
+}
+
+/* changing the color of the whole background */
+/* body{
+  background-color: burlywood;
+} */
+
+/* pseudo elements */
+li:first-child {
+  font-weight: bold;
+}
+
+li:last-child {
+  font-style: italic;
+}
+
+/* li:nth-child(2) {
+  color: crimson;
+} */
+
+/* li:nth-child(odd) {
+  color: aqua;
+} */
+
+/* Misconception: this won't work */
+article p:first-child {
+  color: red;
+}
+
+/* Styling links */
+a:link {
+  /* this will target only the achors with href or links */
+  color: #1098ad;
+  text-decoration: none;
+}
+a:visited {
+  /* this is related to the style if the link was once visited */
+  color: #1098ad;
+}
+a:hover {
+  /* this is when you are hovering over the link */
+  color: orangered;
+  font-weight: bold;
+  text-decoration: underline dotted orangered;
+}
+a:active {
+  /* this is when you are clicking on the link */
+  background-color: black;
+  font-style: italic;
+}
+/* LVHA: link, visited, hover, active */
+/* LVHA: this should be defined in the following sequence as above */
+
+/* Resolving conflicts */
+#copyright {
+  color: red;
+}
+
+.copyright {
+  color: blue;
+}
+
+.text {
+  color: yellow;
+}
+
+/* footer p {
+  color: green !important;
+} */
+
+.post-img {
+  /* percentage of the width of the parent container, here header is the parent element whose width is the entire page width */
+  width: 100%;
+  height: auto;
+}
+
+nav a:link {
+  /* background-color: orangered;  
+  margin: 20px;
+  padding: 20px;
+
+  display: block; */
+
+  margin-right: 30px;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+nav a:link:last-child {
+  margin-right: 0;
+}
+
+button {
+  font-size: 22px;
+  padding: 20px;
+  cursor: pointer;
+
+  position: absolute;
+  /* top: 0; 
+  left: 0;*/
+  bottom: 50px;
+  right: 50px;
+}
+
+/* PSEUDO ELEMENTS */
+h1::first-letter {
+  font-style: normal;
+  margin-right: 5px;
+}
+
+/* ADJACENT SELECTOR */
+/* h3 + p::first-line { */
+  /* color: red; */
+/* } */
+
+h2{
+  position: relative;
+}
+
+h2::before { 
+  content: 'TOP';
+  background-color: #ffe70e; 
+  color: #444;
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px 10px;
+  position: absolute;
+  top: -10px;
+  right: -25px;
+}
