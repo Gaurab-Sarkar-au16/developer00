@@ -144,31 +144,241 @@
 // Basic Array Operations (Methods)
 // ***************************************
 
-const friends =['miki','manoj','rahul']
+// const friends =['miki','manoj','rahul']
 
-// Add elements
-const newLength = friends.push('Jay')
-console.log(friends, newLength)
+// // Add elements
+// const newLength = friends.push('Jay')
+// console.log(friends, newLength)
 
-friends.unshift('John')
-console.log(friends)
+// friends.unshift('John')
+// console.log(friends)
 
-// Remove elements
-const popped = friends.pop()// Last
-console.log(popped)
-console.log(friends)
+// // Remove elements
+// const popped = friends.pop()// Last
+// console.log(popped)
+// console.log(friends)
 
-friends.shift()// First
-console.log(friends)
+// friends.shift()// First
+// console.log(friends)
 
-console.log(friends.indexOf('rahul'))
-console.log(friends.indexOf('bob'))
+// console.log(friends.indexOf('rahul'))
+// console.log(friends.indexOf('bob'))
 
-friends.push(23)
-console.log(friends.includes('Steven'))
-console.log(friends.includes('Bob'))
-console.log(friends.includes(27))
+// friends.push(23)
+// console.log(friends.includes('Steven'))
+// console.log(friends.includes('Bob'))
+// console.log(friends.includes(27))
 
-if(friends.includes('manoj')){
-  console.log('You have friend called Steven')
+// if(friends.includes('manoj')){
+//   console.log('You have friend called Steven')
+// }
+
+// Introduction to Objects
+// ***************************************
+
+// const vivekArray = [
+//   'Vivek',
+//   'Kumar',
+//   2022-1993,
+//   'teacher',
+//   ['manoj','aakash','budek']
+// ]
+
+// const vivek = {
+//   firstName: 'Vivek',
+//   lastName: 'Kumar',
+//   age: 2022 - 1993,
+//   job: 'teacher',
+//   friends: ['manoj','aakash','budek']
+// }
+
+// Dot vs. Bracket Notation
+// ***************************************
+
+// const vivek = {
+//   firstName: 'Vivek',
+//   lastName: 'Kumar',
+//   age: 2022 - 1993,
+//   job: 'teacher',
+//   friends: ['manoj','aakash','budek']
+// }
+// console.log(vivek)
+
+// console.log(vivek.lastName)
+// console.log(vivek['lastName'])
+
+// const nameKey= 'Name'
+// console.log(vivek['first'+nameKey])
+// console.log(vivek['last'+nameKey])
+
+// const interedtedIn = prompt(`What do you want to know about Vivek? Choose between firstName, lastName, age, job and friends`)
+
+// if(vivek[interedtedIn]){
+//   console.log(vivek[interedtedIn])
+// } else {
+//   console.log(`Wrong request!Choose between firstName, lastName, age, job and friends`)
+// }
+
+// vivek.location = 'Bhilai';
+// vivek['twitter'] = '@vivekKumar'
+// console.log(vivek)
+
+// // Challenge
+// // create a dynamic sentence like "Jonas has 3 friends, and his best friend is called Michael(first friend in the list)"
+
+// console.log(`${vivek.firstName} has ${vivek.friends.length} friends, and his best friend is called ${vivek.friends[0]}`)
+
+// Object Methods
+// ***************************************
+// const vivek = {
+//   firstName: "Vivek",
+//   lastName: "Kumar",
+//   birthYear: 1993,
+//   job: "teacher",
+//   friends: ["manoj", "aakash", "budek"],
+//   hasDriversLicense: false,
+
+//   // calcAge: function(birthYear){
+//   //   return 2037 - birthYear
+//   // }
+
+//   // calcAge: function () {
+//   //   return 2037 - this.birthYear;
+//   // },
+
+//   calcAge: function () {
+//     this.age = 2037 - this.birthYear;
+//     return this.age;
+//   },
+
+//   getSummary: function () {
+//     return `${this.firstName} is a ${this.age}-year old ${
+//       this.job
+//     }, and he has ${this.hasDriversLicense ? "a" : "no"} driver's license`;
+//   },
+// };
+
+// // console.log(vivek.calcAge(1991));
+// // console.log(vivek["calcAge"](1991));
+
+// // console.log(vivek.calcAge())
+
+// console.log(vivek.calcAge());
+// console.log(vivek.age);
+
+// // Challenge
+// // "Jonas is a 46-year old teacher, and he has a driver's license"
+
+// console.log(vivek.getSummary());
+
+// // Iteration: The for Loop
+// // ***************************************
+
+// console.log("Lifting weigths repetition 1 🏋️‍♂️");
+// console.log("Lifting weigths repetition 2 🏋️‍♂️");
+// console.log("Lifting weigths repetition 3 🏋️‍♂️");
+// console.log("Lifting weigths repetition 4 🏋️‍♂️");
+// console.log("Lifting weigths repetition 5 🏋️‍♂️");
+// console.log("Lifting weigths repetition 6 🏋️‍♂️");
+// console.log("Lifting weigths repetition 7 🏋️‍♂️");
+// console.log("Lifting weigths repetition 8 🏋️‍♂️");
+// console.log("Lifting weigths repetition 9 🏋️‍♂️");
+// console.log("Lifting weigths repetition 10 🏋️‍♂️");
+
+// for (let rep = 1; rep <= 10; rep++) {
+//   console.log(`Lifting weigths repetition ${rep} 🏋️‍♂️`);
+// }
+
+// Looping Arrays, Breaking and Continuing
+// *******************************************
+
+// const vivek = [
+//   "Vivek",
+//   "Kumar",
+//   2022 - 1993,
+//   "teacher",
+//   ["manoj", "aakash", "budek"],
+// ];
+
+// const types = [];
+
+// for (let i = 0; i < vivek.length; i++) {
+//   // Reading from jonas array
+//   console.log(vivek[i], typeof vivek[i]);
+
+//   // Filling types array
+//   // types[i] = typeof vivek[i]
+//   types.push(typeof vivek[i]);
+// }
+
+// console.log(types);
+
+// const years = [1991, 2007, 2010, 2005, 1993];
+// const ages = [];
+
+// for (let i = 0; i < years.length; i++) {
+//   ages.push(2037 - years[i]);
+// }
+
+// console.log(ages);
+
+// // continue and break
+// console.log(`--- ONLY STRINGS ---`);
+// for (let i = 0; i < vivek.length; i++) {
+//   if (typeof vivek[i] !== "string") continue;
+//   console.log(vivek[i], typeof vivek[i]);
+// }
+
+// console.log(`--- BREAK WITH NUMBER ---`);
+// for (let i = 0; i < vivek.length; i++) {
+//   if (typeof vivek[i] === "number") break;
+//   console.log(vivek[i], typeof vivek[i]);
+// }
+
+// Looping Backwards and Loops in Loops
+// *******************************************
+
+// const vivek = [
+//   "Vivek",
+//   "Kumar",
+//   2022 - 1993,
+//   "teacher",
+//   ["manoj", "aakash", "budek"],
+// ];
+
+// // 0,1,..,4
+// // 4,3,..,0
+
+// for (let i = vivek.length - 1; i >= 0; i--) {
+//   console.log(i, vivek[i]);
+// }
+
+// for(let exercise =1; exercise<4; exercise++){
+//   console.log(`---------- Starting exerise ${exercise}`)
+
+//   for(let rep = 1; rep<6; rep++){
+//     console.log(`Exercise ${exercise}: Lifting weight repitition ${rep}`)
+//   }
+// }
+
+// The while Loop
+// *******************************************
+// for (let rep = 1; rep <= 10; rep++) {
+//   console.log(`Lifting weights repetition ${rep} 🏋️‍♂️`);
+// }
+
+// let rep = 1;
+// while (rep <= 10) {
+//   console.log(`While: Lifting weights repetition ${rep} 🏋️‍♂️`);
+//   rep++;
+// }
+
+let dice = Math.trunc(Math.random()*6)+1
+// console.log(dice)
+
+while(dice !== 6){
+  console.log(`You rolled a ${dice}`)
+  dice = Math.trunc(Math.random()*6)+1
+  if(dice===6) console.log(`Loop is about to end...`)
 }
+
