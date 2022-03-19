@@ -84,36 +84,36 @@
 
 // The this Keyword in Practice
 // **************************************
-console.log(this);
-const calcAge = function (birthYear) {
-  console.log(2037 - birthYear);
-  console.log(this);
-};
-calcAge(1991);
+// console.log(this);
+// const calcAge = function (birthYear) {
+//   console.log(2037 - birthYear);
+//   console.log(this);
+// };
+// calcAge(1991);
 
-const calcAgeArrow = function (birthYear) {
-  console.log(2037 - birthYear);
-  console.log(this);
-};
-calcAgeArrow(1980);
+// const calcAgeArrow = function (birthYear) {
+//   console.log(2037 - birthYear);
+//   console.log(this);
+// };
+// calcAgeArrow(1980);
 
-const jonas = {
-  year: 1991,
-  calcAge: function () {
-    console.log(this);
-    console.log(2037 - this.year);
-  },
-};
-jonas.calcAge();
+// const jonas = {
+//   year: 1991,
+//   calcAge: function () {
+//     console.log(this);
+//     console.log(2037 - this.year);
+//   },
+// };
+// jonas.calcAge();
 
-const matilda = {
-  year: 2017,
-};
-matilda.calcAge = jonas.calcAge;
-matilda.calcAge();
+// const matilda = {
+//   year: 2017,
+// };
+// matilda.calcAge = jonas.calcAge;
+// matilda.calcAge();
 
-const f = jonas.calcAge;
-f();
+// const f = jonas.calcAge;
+// f();
 
 // Regular Functions vs. Arrow Functions
 // *****************************************
@@ -135,16 +135,36 @@ const jonas = {
     // };
 
     // Solution 2
-    const isMillenial = () =>{
-        console.log(self)
-        console.log(self.year >= 1981 && self.year <= 1996)
-      };
-    isMillenial()
+    const isMillenial = () => {
+      console.log(self);
+      console.log(self.year >= 1981 && self.year <= 1996);
+    };
+    isMillenial();
   },
 
   greet: () => {
-    console.log(this)
-    console.log(`Hey ${this.firstName}`)},
+    console.log(this);
+    console.log(`Hey ${this.firstName}`);
+  },
 };
 
 jonas.greet();
+jonas.calcAge();
+
+// arguments keywords
+const addExpr = function (a, b) {
+  console.log(arguments);
+  return a + b;
+};
+addExpr(2, 5);
+addExpr(2, 5, 8, 12);
+
+var addArrow = (a, b) => {
+  console.log(arguments)
+  a + b;
+};
+addArrow(2,5,8)
+
+// Primitives vs. Objects (Primitive vs. Reference Types)
+// *********************************************************
+
