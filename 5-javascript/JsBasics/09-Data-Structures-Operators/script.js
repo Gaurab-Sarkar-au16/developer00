@@ -44,10 +44,10 @@ console.log(arr);
 let [main, , secondary] = restaurant.categories;
 console.log(main, secondary);
 
-// const temp = main;
-// main = secondary;
-// secondary = temp;
-// console.log(main, secondary);
+const temp = main;
+main = secondary;
+secondary = temp;
+console.log(main, secondary);
 
 [main, secondary] = [secondary, main]
 console.log(main, secondary)
