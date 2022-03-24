@@ -104,3 +104,5 @@ const {
   fri: { open, close },
 } = openingHours;
 console.log(fri);
+
+
