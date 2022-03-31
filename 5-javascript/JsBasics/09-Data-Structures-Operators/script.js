@@ -70,37 +70,70 @@ const restaurant = {
   },
 };
 
+// Sets:
+// ************************
+const ordersSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+console.log(ordersSet)
+
+console.log(new Set('Jonas'))
+
+console.log(ordersSet.size)
+console.log(ordersSet.has('Pizza'))
+console.log(ordersSet.has('Bread'))
+ordersSet.add('Garlic Bread')
+ordersSet.add('Garlic Bread')
+ordersSet.delete('Risotto')
+console.log(ordersSet)
+
+for (const order of ordersSet) console.log(order)
+
+// Example
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef','Waiter']
+const staffUnique = [...new Set(staff)]
+console.log(staffUnique)
+
+console.log(new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef','Waiter']).size)
+
+console.log(new Set('jonasschmedtmann').size)
+
 // Looping Objects: Object Keys, Values, and Entries:
 // *******************************************************
 
 // Property NAMES
-for(const day of Object.keys(openingHours)){
-  console.log(day)
-}
-const properties = Object.keys(openingHours)
-console.log(properties)
+// for (const day of Object.keys(openingHours)) {
+//   console.log(day);
+// }
+// const properties = Object.keys(openingHours);
+// console.log(properties);
 
-let openStr = `We are open on ${properties.length} days: `
-for(const day of properties){
-  openStr += `${day},`
-}
-console.log(openStr)
+// let openStr = `We are open on ${properties.length} days: `;
+// for (const day of properties) {
+//   openStr += `${day},`;
+// }
+// console.log(openStr);
 
-// Property VALUES
-const values = Object.values(openingHours)
-console.log(values)
+// // Property VALUES
+// const values = Object.values(openingHours);
+// console.log(values);
 
-// Entire object
-const entries = Object.entries(openingHours)
-// console.log(entries)
+// // Entire object
+// const entries = Object.entries(openingHours);
+// // console.log(entries)
 
-for (const x of entries) {
-  console.log(x)
-}
+// for (const x of entries) {
+//   console.log(x);
+// }
 
-for (const [key, {open, close}] of entries){
-  console.log(`On ${key} we open at ${open} and close at ${close}`)
-}
+// for (const [key, { open, close }] of entries) {
+//   console.log(`On ${key} we open at ${open} and close at ${close}`);
+// }
 
 // Optional Chaining (?.):
 // **********************************
@@ -130,8 +163,6 @@ for (const [key, {open, close}] of entries){
 // else console.log(`user array empty`)
 
 // console.log(users[0]?.name??'User array empty')
-
-
 
 // Looping Arrays: The for-of Loop:
 // *****************************************
