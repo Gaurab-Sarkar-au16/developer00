@@ -167,4 +167,15 @@ book.call(swiss, 583, 'Mary Cooper')
 console.log(swiss)
 
 // Apply method
-const flightData = []
+const flightData = [583,'George Cooper']
+book.apply(swiss, flightData)
+console.log(swiss)
+
+book.call(swiss, ...flightData)
+
+// The bind Method
+// ************************
+
+const bookEW = book.bind(eurowings)
+bookEW(23, 'Steven Williams')
+
