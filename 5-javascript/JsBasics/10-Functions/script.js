@@ -132,13 +132,13 @@ const lufthansa = {
     console.log(
       `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
     );
-    this.bookings.push({flight: `${this.iataCode}${flightNum}`, name})
+    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
   },
 };
 
 lufthansa.book(239, 'Vivek Bindra');
 lufthansa.book(635, 'Jhon Smith');
-console.log(lufthansa)
+console.log(lufthansa);
 
 const eurowings = {
   name: 'Eurowings',
@@ -146,36 +146,63 @@ const eurowings = {
   bookings: [],
 };
 
-const book = lufthansa.book
+const book = lufthansa.book;
 
 // Does NOT work
 // book(23,'Sarah Williams')
 
-book.call(eurowings, 23, 'Sarah Williams')
-console.log(eurowings)
+book.call(eurowings, 23, 'Sarah Williams');
+console.log(eurowings);
 
-book.call(lufthansa, 239, 'Mary Cooper')
-console.log(lufthansa)
+book.call(lufthansa, 239, 'Mary Cooper');
+console.log(lufthansa);
 
 const swiss = {
   airline: 'Swiss Air Lines',
   iataCode: 'LX',
-  bookings: []
-}
+  bookings: [],
+};
 
-book.call(swiss, 583, 'Mary Cooper')
-console.log(swiss)
+book.call(swiss, 583, 'Mary Cooper');
+console.log(swiss);
 
 // Apply method
-const flightData = [583,'George Cooper']
-book.apply(swiss, flightData)
-console.log(swiss)
+const flightData = [583, 'George Cooper'];
+book.apply(swiss, flightData);
+console.log(swiss);
 
-book.call(swiss, ...flightData)
+book.call(swiss, ...flightData);
 
 // The bind Method
 // ************************
 
-const bookEW = book.bind(eurowings)
-bookEW(23, 'Steven Williams')
+const bookEW = book.bind(eurowings);
+const bookLH = book.bind(lufthansa);
+const bookLX = book.bind(swiss);
+
+bookEW(23, 'Steven Williams');
+
+const bookEW23 = book.bind(eurowings, 23);
+bookEW23('Gaurab Sarkar');
+bookEW23('Martha Cooper');
+
+// With Event Listeners
+lufthansa.planes = 300;
+lufthansa.buyPLane = function () {
+  this.planes++;
+  console.log(this.planes);
+};
+document
+  .querySelector('.buy')
+  .addEventListener('click', lufthansa.buyPLane.bind(lufthansa));
+
+// Partial application
+const addTax = (rate, value) => value + value * rate;
+console.log(0.1, 200);
+
+const addVAT = addTax.bind(null, 0.23);
+// addVAT = value => value + value * 0.23
+
+console.log(addVAT(100));
+console.log(addVAT(23));
 
