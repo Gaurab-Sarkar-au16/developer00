@@ -244,19 +244,34 @@
 // Closures
 // ******************
 
-const secureBooking = function() {
-  let passengerCount = 0;
+// const secureBooking = function() {
+//   let passengerCount = 0;
 
-  return function(){
-    passengerCount++
-    console.log(`${passengerCount} passengers`)
+//   return function(){
+//     passengerCount++
+//     console.log(`${passengerCount} passengers`)
+//   }
+// }
+
+// const booker = secureBooking()
+
+// booker()
+// booker()
+// booker()
+
+// console.dir(booker)
+
+// More Closures Examples:
+// ********************************
+
+let f
+
+const g = function() {
+  const a= 23
+  f = function(){
+    console.log(a*2)
   }
 }
 
-const booker = secureBooking()
-
-booker()
-booker()
-booker()
-
-console.dir(booker)
+g()
+f()
