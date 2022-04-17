@@ -264,14 +264,37 @@
 // More Closures Examples:
 // ********************************
 
-let f
+// Example 1
+let f;
 
-const g = function() {
-  const a= 23
-  f = function(){
-    console.log(a*2)
-  }
+const g = function () {
+  const a = 23;
+  f = function () {
+    console.log(a * 2);
+  };
+};
+
+const h = function () {
+  const b = 777;
+  f = function () {
+    console.log(b * 2);
+  };
+};
+
+g();
+f();
+console.log(f);
+
+// Reassigning f function
+h();
+f();
+console.log(f);
+
+// Example 2
+const boardPassengers = function(n, wait){
+  const perGroup = n/3;
+
+  
+
+  console.log(`Will start boarding in ${wait} seconds`)  
 }
-
-g()
-f()
