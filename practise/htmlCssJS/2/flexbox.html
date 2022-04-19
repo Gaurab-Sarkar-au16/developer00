@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .el--1 {
+        background-color: aqua;
+      }
+      .el--2 {
+        background-color: green;
+      }
+      .el--3 {
+        background-color: goldenrod;
+      }
+      .el--4 {
+        background-color: palevioletred;
+      }
+      .el--5 {
+        background-color: steelblue;
+      }
+      .el--6 {
+        background-color: yellow;
+        height: 100px;
+      }
+      .el--7 {
+        background-color: crimson;
+      }
+      .el--8 {
+        background-color: brown;
+      }
+
+      .container div {
+        width: 70px;
+      }
+
+      .container {
+        font-family: sans-serif;
+        background-color: #ddd;
+        font-size: 34px;
+        margin: 40px;
+
+        display: flex;
+        /* flex-direction: column;
+        flex-direction: row-reverse; */
+        flex-wrap: wrap;
+        /* vertical operations */
+        /* align-items: flex-start;
+        align-items: flex-end;
+        align-items: stretch; */
+        align-items: center;
+        /* Horizontal operations */
+        /* justify-content: center;
+        justify-content: end;
+        justify-content: start;
+        justify-content: space-between;
+        justify-content: space-around; */
+        /* gap: 30px; */
+      }
+
+      .el {
+        /* margin-right: 30px; */
+        /* flex-basis: 100px; */
+        flex-shrink: 0;
+        flex-grow: 1;
+      }
+
+      .el--1 {
+        align-self: flex-end;
+        order: 1;
+      }
+    </style>
+    <title>Flexbox</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="el el--1">1</div>
+      <div class="el el--2">2</div>
+      <div class="el el--3">3</div>
+      <div class="el el--4">4</div>
+      <div class="el el--5">5</div>
+      <div class="el el--6">6</div>
+      <div class="el el--7">7</div>
+      <div class="el el--8">8</div>
+    </div>
+  </body>
+</html>
