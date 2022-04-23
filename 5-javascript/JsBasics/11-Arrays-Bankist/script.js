@@ -107,7 +107,7 @@ const calcDisplaySummary = function (movements) {
     .filter(mov => mov > 0)
     .map(deposit => (deposit * 1.2) / 100)
     .filter((int, i, arr) => {
-      console.log(arr)
+      console.log(arr);
       return int >= 1;
     })
     .reduce((acc, int) => acc + int, 0);
@@ -351,3 +351,20 @@ console.log(accounts);
 //   })
 //   .reduce((acc, mov) => acc + mov, 0);
 // console.log(totalDepositsUSD);
+
+// The find Method
+// **********************
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const firstWithdrawal = movements.find(mov => mov < 0);
+
+console.log(movements);
+console.log(firstWithdrawal);
+
+console.log(accounts);
+
+const account = accounts.find(acc => acc.owner === 'Jessica Davis');
+console.log(account);
+
+for (const account of accounts)
+  account.owner === 'Jessica Davis' ? console.log(account) : '';
