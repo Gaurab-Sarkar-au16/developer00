@@ -74,7 +74,7 @@ const displayMovements = function (movements) {
         <div class="movements__type movements__type--${type}">${
       i + 1
     } ${type}</div>
-        <div class="movements__value">${mov}</div>
+        <div class="movements__value">${mov}€</div>
       </div>
     `;
 
@@ -86,9 +86,34 @@ displayMovements(account1.movements);
 // Displaying the sum total of movements:
 const calcDisplayBalance = function (movements) {
   const balance = movements.reduce((acc, mov) => acc + mov, 0);
-  labelBalance.textContent = `${balance} EUR`;
+  labelBalance.textContent = `${balance}€`;
 };
 calcDisplayBalance(account1.movements);
+
+const calcDisplaySummary = function (movements) {
+  const incomes = movements
+    .filter(mov => mov > 0)
+    .reduce((acc, mov) => acc + mov, 0);
+  console.log(incomes);
+  labelSumIn.textContent = `${incomes}€`;
+
+  const outcomes = movements
+    .filter(mov => mov < 0)
+    .reduce((acc, mov) => acc + mov, 0);
+  console.log(outcomes);
+  labelSumOut.textContent = `${Math.abs(outcomes)}€`;
+
+  const interest = movements
+    .filter(mov => mov > 0)
+    .map(deposit => (deposit * 1.2) / 100)
+    .filter((int, i, arr) => {
+      console.log(arr)
+      return int >= 1;
+    })
+    .reduce((acc, int) => acc + int, 0);
+  labelSumInterest.textContent = `${interest}€`;
+};
+calcDisplaySummary(account1.movements);
 
 // Computing Usernames
 // ***************************
@@ -286,7 +311,7 @@ console.log(accounts);
 
 // The reduce Method
 // ****************************
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 // const balance = movements.reduce(function(acc, cur, i, arr){
 //   console.log(`Iteration ${i}: ${acc}`)
@@ -294,12 +319,12 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // }, 0)
 // console.log(balance)
 
-const balance = movements.reduce((acc, curr) => acc + curr, 0);
-console.log(balance);
+// const balance = movements.reduce((acc, curr) => acc + curr, 0);
+// console.log(balance);
 
-let balance2 = 0;
-for (const mov of movements) balance2 += mov;
-console.log(balance2);
+// let balance2 = 0;
+// for (const mov of movements) balance2 += mov;
+// console.log(balance2);
 
 // maximum value
 // const maxValue = movements.reduce(function(acc, curr){
@@ -307,8 +332,22 @@ console.log(balance2);
 //  return acc
 // }, 0)
 // console.log(maxValue)
-const max = movements.reduce((acc, mov) => {
-  if (acc > mov) return acc;
-  else return mov;
-}, movements[0]);
-console.log(max);
+// const max = movements.reduce((acc, mov) => {
+//   if (acc > mov) return acc;
+//   else return mov;
+// }, movements[0]);
+// console.log(max);
+
+// The Magic of Chaining Methods
+// ******************************************
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// const eurToUsd = 1.1;
+// const totalDepositsUSD = movements
+//   .filter(mov => mov > 0)
+//   .map((mov, i, arr) => {
+//     // console.log(arr)
+//     return mov * eurToUsd;
+//   })
+//   .reduce((acc, mov) => acc + mov, 0);
+// console.log(totalDepositsUSD);
