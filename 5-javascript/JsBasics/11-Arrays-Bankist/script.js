@@ -94,20 +94,20 @@ const calcDisplaySummary = function (movements) {
   const incomes = movements
     .filter(mov => mov > 0)
     .reduce((acc, mov) => acc + mov, 0);
-  console.log(incomes);
+  // console.log(incomes);
   labelSumIn.textContent = `${incomes}€`;
 
   const outcomes = movements
     .filter(mov => mov < 0)
     .reduce((acc, mov) => acc + mov, 0);
-  console.log(outcomes);
+  // console.log(outcomes);
   labelSumOut.textContent = `${Math.abs(outcomes)}€`;
 
   const interest = movements
     .filter(mov => mov > 0)
     .map(deposit => (deposit * 1.2) / 100)
     .filter((int, i, arr) => {
-      console.log(arr);
+      // console.log(arr);
       return int >= 1;
     })
     .reduce((acc, int) => acc + int, 0);
@@ -130,6 +130,24 @@ const createUsernames = function (accs) {
 };
 createUsernames(accounts);
 console.log(accounts);
+
+// Implementing Login
+// ***************************
+
+// Event handler
+let currentAccount;
+
+btnLogin.addEventListener('click', function (e) {
+  // Prevent form from submitting
+  e.preventDefault();
+
+  currentAccount = accounts.find(acc => acc.username === inputLoginUsername.value);
+  console.log(currentAccount);
+
+  if(currentAccount.pin === Number(inputLoginPin.value)){
+    console.log(`login`)
+  }
+});
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -354,17 +372,17 @@ console.log(accounts);
 
 // The find Method
 // **********************
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-const firstWithdrawal = movements.find(mov => mov < 0);
+// const firstWithdrawal = movements.find(mov => mov < 0);
 
-console.log(movements);
-console.log(firstWithdrawal);
+// console.log(movements);
+// console.log(firstWithdrawal);
 
-console.log(accounts);
+// console.log(accounts);
 
-const account = accounts.find(acc => acc.owner === 'Jessica Davis');
-console.log(account);
+// const account = accounts.find(acc => acc.owner === 'Jessica Davis');
+// console.log(account);
 
-for (const account of accounts)
-  account.owner === 'Jessica Davis' ? console.log(account) : '';
+// for (const account of accounts)
+//   account.owner === 'Jessica Davis' ? console.log(account) : '';
