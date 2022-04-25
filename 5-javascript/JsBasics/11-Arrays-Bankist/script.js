@@ -81,31 +81,29 @@ const displayMovements = function (movements) {
     containerMovements.insertAdjacentHTML('afterbegin', html);
   });
 };
-displayMovements(account1.movements);
 
 // Displaying the sum total of movements:
 const calcDisplayBalance = function (movements) {
   const balance = movements.reduce((acc, mov) => acc + mov, 0);
   labelBalance.textContent = `${balance}€`;
 };
-calcDisplayBalance(account1.movements);
 
-const calcDisplaySummary = function (movements) {
-  const incomes = movements
+const calcDisplaySummary = function (acc) {
+  const incomes = acc.movements
     .filter(mov => mov > 0)
     .reduce((acc, mov) => acc + mov, 0);
   // console.log(incomes);
   labelSumIn.textContent = `${incomes}€`;
 
-  const outcomes = movements
+  const outcomes = acc.movements
     .filter(mov => mov < 0)
     .reduce((acc, mov) => acc + mov, 0);
   // console.log(outcomes);
   labelSumOut.textContent = `${Math.abs(outcomes)}€`;
 
-  const interest = movements
+  const interest = acc.movements
     .filter(mov => mov > 0)
-    .map(deposit => (deposit * 1.2) / 100)
+    .map(deposit => (deposit * acc.interestRate) / 100)
     .filter((int, i, arr) => {
       // console.log(arr);
       return int >= 1;
@@ -113,7 +111,6 @@ const calcDisplaySummary = function (movements) {
     .reduce((acc, int) => acc + int, 0);
   labelSumInterest.textContent = `${interest}€`;
 };
-calcDisplaySummary(account1.movements);
 
 // Computing Usernames
 // ***************************
@@ -141,11 +138,30 @@ btnLogin.addEventListener('click', function (e) {
   // Prevent form from submitting
   e.preventDefault();
 
-  currentAccount = accounts.find(acc => acc.username === inputLoginUsername.value);
+  currentAccount = accounts.find(
+    acc => acc.username === inputLoginUsername.value
+  );
   console.log(currentAccount);
 
-  if(currentAccount.pin === Number(inputLoginPin.value)){
-    console.log(`login`)
+  if (currentAccount?.pin === Number(inputLoginPin.value)) {
+    // Display UI and message
+    labelWelcome.textContent = `Welcome back, ${
+      currentAccount.owner.split(' ')[0]
+    }`;
+    containerApp.style.opacity = 100;
+
+    // Clear input field
+    inputLoginUsername.value = inputLoginPin.value = '';
+    inputLoginPin.blur()
+
+    // Display movements
+    displayMovements(currentAccount.movements);
+
+    // Display balance
+    calcDisplayBalance(currentAccount.movements);
+
+    // Display summary
+    calcDisplaySummary(currentAccount);
   }
 });
 
