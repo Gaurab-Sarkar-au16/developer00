@@ -495,8 +495,28 @@ console.log(movements.every(mov => mov > 0));
 console.log(account4.movements.every(mov => mov > 0));
 
 // Seperate callback
-const deposit = mov => mov>0
-console.log(movements.some(deposit))
-console.log(movements.every(deposit))
-console.log(movements.filter(deposit))
+const deposit = mov => mov > 0;
+console.log(movements.some(deposit));
+console.log(movements.every(deposit));
+console.log(movements.filter(deposit));
 
+// flat and flatMap
+// **********************
+
+const arr = [[1, 2, 3], [4, 5, 6], 7, 8];
+console.log(arr.flat());
+
+const arrDeep = [[[1, 2], 3], [4, [5, 6]], 7, 8];
+console.log(arrDeep.flat())
+console.log(arrDeep.flat(1))
+console.log(arrDeep.flat(2))
+
+// const accountMovements = accounts.map(acc=>acc.movements)
+// console.log(accountMovements)
+// const allMovements = accountMovements.flat()
+// console.log(allMovements)
+// const overalBalance = allMovements.reduce((acc,mov) => acc+mov,0)
+// console.log(overalBalance)
+
+const overallBalance = accounts.map(acc => acc.movements).flat().reduce((acc,mov) => acc+mov,0)
+console.log(overallBalance)
