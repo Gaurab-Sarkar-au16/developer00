@@ -198,13 +198,28 @@ btnTransfer.addEventListener('click', function (e) {
   }
 });
 
+btnLoan.addEventListener('click', function (e) {
+  e.preventDefault();
+
+  const amount = Number(inputLoanAmount.value);
+
+  if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
+    // Add movement
+    currentAccount.movements.push(amount);
+
+    // updateUI(current)
+    updateUI(currentAccount);
+  }
+  inputLoanAmount.value = '';
+});
+
 // The findIndex Method
 // ****************************
 //closing an account means deleting the account from the accounts array, and for deleting something from an array we need the index of the element, thats where find index helps by returning index
 
 btnClose.addEventListener('click', function (e) {
   e.preventDefault();
-  // console.log('Delete');  
+  // console.log('Delete');
 
   if (
     inputCloseUsername.value === currentAccount.username &&
@@ -462,3 +477,26 @@ btnClose.addEventListener('click', function (e) {
 
 // for (const account of accounts)
 //   account.owner === 'Jessica Davis' ? console.log(account) : '';
+
+// some and every
+// **********************
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+console.log(movements);
+// EQUALITY
+console.log(movements.includes(-130));
+// CONDITION
+const anyDeposits = movements.some(mov => mov > 0);
+console.log(anyDeposits);
+
+// Every
+console.log(movements.every(mov => mov > 0));
+console.log(account4.movements.every(mov => mov > 0));
+
+// Seperate callback
+const deposit = mov => mov>0
+console.log(movements.some(deposit))
+console.log(movements.every(deposit))
+console.log(movements.filter(deposit))
+
