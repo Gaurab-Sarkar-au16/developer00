@@ -76,12 +76,12 @@ dogs.forEach(function (dog) {
 const ownersEatTooMuch = dogs
   .filter((dog) => dog.curFood > dog.foodPortion)
   .flatMap((dog) => dog.owners);
-console.log(ownersEatTooMuch)
+console.log(ownersEatTooMuch);
 
 const ownersEatTooLittle = dogs
   .filter((dog) => dog.curFood > dog.foodPortion)
   .flatMap((dog) => dog.owners);
-  console.log(ownersEatTooLittle)
+console.log(ownersEatTooLittle);
 
 // 4.
 console.log(`${ownersEatTooMuch.join(" and ")} dogs eat too much!`);
@@ -94,30 +94,37 @@ console.log(`${ownersEatTooLittle.join(" and ")} dogs eat too little!`);
 //   } dogs that eat exactly the amount of food that is recommended `
 // );
 
-
 // 6.
-console.log(
-  `There is ${
-    dogs.find(
-      (dog) =>
-        dog.curFood > dog.foodPortion * 0.9 &&
-        dog.curFood < dog.foodPortion * 1.1
-    )
-      ? "a"
-      : "no"
-  } dog that eats an okay amount of food`
-);
-const checkEatingOkay = {}
+// console.log(
+//   `There is ${
+//     dogs.find(
+//       (dog) =>
+//         dog.curFood > dog.foodPortion * 0.9 &&
+//         dog.curFood < dog.foodPortion * 1.1
+//     )
+//       ? "a"
+//       : "no"
+//   } dog that eats an okay amount of food`
+// );
+const checkEatingOkay = (dog) =>
+  dog.curFood > dog.foodPortion * 0.9 && dog.curFood < dog.foodPortion * 0.1;
+
+console.log(dogs.some(checkEatingOkay));
 
 // 7.
-const okAmount = dogs.filter(
-  (dog) =>
-    dog.curFood > dog.foodPortion * 0.9 && dog.curFood < dog.foodPortion * 1.1
-);
-console.log(okAmount);
+// const okAmount = dogs.filter(
+//   (dog) =>
+//     dog.curFood > dog.foodPortion * 0.9 && dog.curFood < dog.foodPortion * 1.1
+// );
+// console.log(okAmount);
+console.log(dogs.filter(checkEatingOkay));
 
 // 8.
-const shallowCopy = dogs.slice().sort((a, b) => {
-  a.foodPortion > b.foodPortion ? 1 : -1;
-});
-console.log(shallowCopy);
+// const shallowCopy = dogs.slice().sort((a, b) => {
+//   a.foodPortion > b.foodPortion ? 1 : -1;
+// });
+// console.log(shallowCopy);
+
+// Sort it by recommended food portion in an ascending order
+const dogsCopy = dogs.slice().sort((a, b) => a.foodPortion - b.foodPortion);
+console.log(dogsCopy);
