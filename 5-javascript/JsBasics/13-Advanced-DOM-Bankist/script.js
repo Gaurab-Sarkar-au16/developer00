@@ -35,3 +35,5 @@ document.addEventListener('keydown', function (e) {
 
 // Selecting elements
 console.log(document.documentElement)
+
+
