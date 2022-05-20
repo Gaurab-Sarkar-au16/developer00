@@ -71,3 +71,40 @@ document
     message.remove();
     // message.parentElement.removeChild(message);
   });
+
+// Styles, Attributes and Classes
+// *****************************************
+
+message.style.backgroundColor = '#37383d';
+message.style.width = '120%';
+
+console.log(message.style.height);
+console.log(message.style.backgroundColor);
+
+console.log(getComputedStyle(message).color);
+console.log(getComputedStyle(message).height);
+
+message.style.height =
+  Number.parseFloat(getComputedStyle(message).height , 10) + 30 + 'px';
+
+document.documentElement.style.setProperty('--color-primary', 'orangered')
+
+// Attributes
+const logo = document.querySelector('.nav__logo')
+console.log(logo.alt)
+console.log(logo.src)
+console.log(logo.className)
+console.log(logo.designer)
+
+logo.alt = 'Beautiful minimalist logo'
+
+// Non-standard
+console.log(logo.designer)
+console.log(logo.getAttribute('designer'))
+logo.setAttribute('company', 'Bankist')
+
+logo.getAttribute('src')
+
+const link = document.querySelector('.twitter-link')
+console.log(link.href)
+console.log(link.getAttribute('href'))
