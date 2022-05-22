@@ -108,3 +108,15 @@ logo.getAttribute('src')
 const link = document.querySelector('.twitter-link')
 console.log(link.href)
 console.log(link.getAttribute('href'))
+
+// Data attributes
+console.log(logo.dataset.versionNumber)
+
+// Classes
+logo.classList.add('c','j')
+logo.classList.remove('c','j')
+logo.classList.toggle('c')
+logo.classList.contains('c')
+
+// Dont use
+logo.className='jonas'
