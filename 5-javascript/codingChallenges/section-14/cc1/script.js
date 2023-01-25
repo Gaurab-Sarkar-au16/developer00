@@ -20,7 +20,7 @@ Car.prototype.accelerate = function(){
   console.log(`${this.make} is going at a speed of ${this.speed}km/h`)
 } 
 
-Car.prototype.accelerate = function(){
+Car.prototype.brake = function(){
   this.speed -= 5
   console.log(`${this.make} is going at a speed of ${this.speed}km/h`)
 }
