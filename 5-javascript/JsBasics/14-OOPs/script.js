@@ -227,5 +227,4 @@ const sarah = Object.create(PersonProto)
 sarah.init('Sarah',1979)
 sarah.calcAge()
 
-// Inheritance between "classes": constructor functions
-// =====================================================
+
