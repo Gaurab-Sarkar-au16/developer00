@@ -26,10 +26,6 @@ const BookDetailPage = () => {
       }
     }, [data]);
   
-    const placeOrder = async () => {
-      const result = await firebase.placeOrder(params.bookId, qty);
-      console.log("Order Placed", result);
-    };
   
     if (data == null) return <h1>Loading...</h1>;
 
@@ -41,20 +37,8 @@ const BookDetailPage = () => {
       <p>Price: Rs. {data.price}</p>
       <p>ISBN Number. {data.isbn}</p>
       <h1>Owner Details</h1>
-      <p>Name: {data.displayName}</p>
       <p>Email: {data.userEmail}</p>
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Qty</Form.Label>
-        <Form.Control
-          onChange={(e) => setQty(e.target.value)}
-          value={qty}
-          type="Number"
-          placeholder="Enter Qty"
-        />
-      </Form.Group>
-      <Button onClick={placeOrder} variant="success">
-        Buy Now
-      </Button>
+      
     </div>
   );
 };
