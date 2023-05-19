@@ -1,0 +1,17 @@
+1. ls
+2. pwd
+3. cd: 'cd .', 'cd ..', 'cd ~', 'cd -'
+4. clear
+5. explorer .
+6. mkdir foldername
+7. rm -r foldername
+
+8. echo content1 > abc.txt (create file)
+9. echo content2 >> abc.txt (append file data)
+10. rm abc.txt (remove file)
+11. cat abc.txt (contents of file in terminal)
+
+12. mv source_path destination_path (file/folder)
+13. cp source_path destination_path (file/folder)
+
+14. touch fileName (creates empty file)

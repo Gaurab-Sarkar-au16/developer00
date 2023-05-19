@@ -1,0 +1,23 @@
+1. git init
+2. git status
+3. git add fileName/ git add .
+4. git commit -m "message"
+5. git log (display all the commits)
+6. git diff fileName
+7. git checkout (commitSHA / master / branchName): this will move the head to the following place
+
+8. git clone url (ssh/http)
+9. git branch (name of current branch)
+10. git push origin branchName
+11. git pull origin branchName
+
+ctrl + c : to come out of a command
+
+12. git branch branchName (creates branch)
+13. git merge A (merge branch A after going to the branch with which we want to merge it)
+14. git branch -D branchName: delete branch
+
+git remote show origin: this command shows repositories origin
+git log --graph
+
+merge conflict
