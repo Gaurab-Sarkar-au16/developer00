@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /* .el{
+        height:200px
+      } */
+      .el--1 {
+        background-color: green;
+      }
+      .el--2 {
+        background-color: goldenrod;
+      }
+      .el--3 {
+        background-color: palevioletred;
+        height: 150px;
+      }
+      .el--4 {
+        background-color: steelblue;
+      }
+      .el--5 {
+        background-color: yellow;
+      }
+      .el--6 {
+        background-color: crimson;
+      }
+      .el--7 {
+        background-color: purple;
+      }
+      .el--8 {
+        background-color: red;
+      }
+
+      .container {
+        font-family: sans-serif;
+        background-color: #ddd;
+        font-size: 30px;
+        margin: 40px;
+        height: 60vh;
+
+        /* css grid */
+        display: grid;
+        /* grid-template-columns: 200px 200px 100px 100px; */
+        /* grid-template-columns: 2fr 1fr 1fr 1fr; */
+        grid-template-columns: 2fr repeat(3, 1fr);
+        
+        /* grid-template-rows: 300px 200px; */
+        /* grid-template-rows: 2fr auto; */
+        grid-template-rows: 2fr 1fr;
+
+        /* gap */
+        column-gap: 10px;
+        row-gap: 40px;
+
+        /* aligning */
+        justify-content: center;
+        /* justify-content: space-between; */
+        align-content: center;
+
+        align-items: center;
+        justify-items: center;
+      }
+
+      .el--8{
+        grid-column: 2/3;
+        grid-row: 1/3;
+      }
+
+      .el--3{
+        align-self: end;
+        justify-self: end;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p class="el el--1">HTML</p>
+      <p class="el el--2">and</p>
+      <p class="el el--3">Css(3)</p>
+      <p class="el el--4">are</p>
+      <p class="el el--5">amazing</p>
+      <p class="el el--6">languages</p>
+      <p class="el el--7">to</p>
+      <p class="el el--8">learn</p>
+    </div>
+  </body>
+</html>
