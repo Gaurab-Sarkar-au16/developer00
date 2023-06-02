@@ -9,6 +9,7 @@ const orderRoutes = require("./api/routes/orders");
 mongoose.connect(`mongodb+srv://gaurab2108:password21@cluster0.szxzs.mongodb.net/?retryWrites=true&w=majority`)
 
 app.use(morgan("dev"));
+app.use('/uploads',express.static('uploads'))
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
