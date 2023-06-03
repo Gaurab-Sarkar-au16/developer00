@@ -2,12 +2,13 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 const mongoose = require("mongoose")
+require('dotenv').config()
 
 const productRoutes = require("./api/routes/products");
 const orderRoutes = require("./api/routes/orders");
 const userRoutes = require("./api/routes/user")
 
-mongoose.connect(`mongodb+srv://gaurab2108:password21@cluster0.szxzs.mongodb.net/?retryWrites=true&w=majority`)
+mongoose.connect(`mongodb+srv://${process.env.NAME}:${process.env.PASSWORD}@cluster0.szxzs.mongodb.net/?retryWrites=true&w=majority`)
 
 app.use(morgan("dev"));
 app.use('/uploads',express.static('uploads'))
