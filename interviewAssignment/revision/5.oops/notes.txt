@@ -1,0 +1,26 @@
+Good class implementation(4 principles of oops): abstraction, encapsulation, inheritance, polymorphism
+
+1. Encapsulation: 
+    Bundling data and related actions together to protect and control access to them.
+
+2. Inheritance: 
+    Subclasses inherit properties and actions from parent classes, promoting code reuse and flexibility.
+
+3. Polymorphism: 
+    Objects can take on different forms and behaviors, allowing flexibility and interchangeability.
+
+4. Abstraction: 
+    Representing complex things in a simplified way, focusing on what's important and hiding unnecessary details.
+
+Prototypal inheritance:
+    The prototype contains methods(behaviour) that are accessible to all objects linked to that prototype
+
+3 ways to implement prototypal inheritance in js:
+    1. Constructor function
+    2. ES6 classes
+    3. Object.create()
+
+Constructor function
+    The diff between a normal functiona and a constructor function is that we call it with 'new' keyword
+    OOP convention name of constructor function start with a capital letter
+    Arrow function not used because no this keyword
