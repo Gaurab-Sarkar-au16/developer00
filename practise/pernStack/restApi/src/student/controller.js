@@ -3,7 +3,11 @@ const queries = require("./queries");
 
 exports.getStudents = (req, res) => {
   pool.query(queries.getStudents, (error, results) => {
-    if (error) throw error;
+    if (error) {
+      res.status(400).json({
+        message: error,
+      });
+    }
     if (results) {
       res.status(200).json(results.rows);
     }
@@ -13,7 +17,11 @@ exports.getStudents = (req, res) => {
 exports.getStudentById = (req, res) => {
   const id = parseInt(req.params.id);
   pool.query(queries.getStudentById, [id], (error, results) => {
-    if (error) throw error;
+    if (error) {
+      res.status(400).json({
+        message: error,
+      });
+    }
     if (results) {
       res.status(200).json(results.rows);
     }
@@ -38,7 +46,8 @@ exports.addStudent = (req, res) => {
           res.status(400).json({
             message: error,
           });
-        } else {
+        }
+        if (results) {
           console.log("Student create");
           res.status(201).send("Student Created Successfully!");
         }
@@ -61,7 +70,8 @@ exports.removeStudent = (req, res) => {
         res.status(400).json({
           message: error,
         });
-      } else {
+      }
+      if (results) {
         res.status(200).send("Student removed successfully.");
       }
     });
@@ -83,7 +93,8 @@ exports.updateStudent = (req, res) => {
         res.status(400).json({
           message: error,
         });
-      } else {
+      }
+      if (results) {
         res.status(200).send("Student updated successfully");
       }
     });
