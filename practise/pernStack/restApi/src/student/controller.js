@@ -34,9 +34,14 @@ exports.addStudent = (req, res) => {
       queries.addStudent,
       [name, email, age, dob],
       (error, results) => {
-        if (error) throw error;
-        console.log("Student create");
-        res.status(201).send("Student Created Successfully!");
+        if (error) {
+          res.status(400).json({
+            message: error,
+          });
+        } else {
+          console.log("Student create");
+          res.status(201).send("Student Created Successfully!");
+        }
       }
     );
   });
@@ -52,8 +57,13 @@ exports.removeStudent = (req, res) => {
     }
 
     pool.query(queries.removeStudent, [id], (error, results) => {
-      if (error) throw error;
-      res.status(200).send("Student removed successfully.");
+      if (error) {
+        res.status(400).json({
+          message: error,
+        });
+      } else {
+        res.status(200).send("Student removed successfully.");
+      }
     });
   });
 };
@@ -69,8 +79,13 @@ exports.updateStudent = (req, res) => {
     }
 
     pool.query(queries.updateStudent, [name, id], (error, results) => {
-      if (error) throw error;
-      res.status(200).send("Student updated successfully");
+      if (error) {
+        res.status(400).json({
+          message: error,
+        });
+      } else {
+        res.status(200).send("Student updated successfully");
+      }
     });
   });
 };
