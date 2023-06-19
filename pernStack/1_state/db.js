@@ -4,7 +4,7 @@ const pool = new Pool({
   user: "gaurab",
   host: "cs-db-instance.caz3rblbkur8.ap-south-1.rds.amazonaws.com",
   database: "dsc_bpl",
-  password: "gaurab123",
+  password: "",
   port: 5432,
 });
 
