@@ -13,4 +13,4 @@ exports.removeState =
   "DELETE FROM dsc_bpl.dsc_bpl.state_master WHERE state_id = $1";
 
 exports.updateState =
-  "UPDATE dsc_bpl.dsc_bpl.state_master SET state_name = $1 WHERE state_id = $2";
+  "UPDATE dsc_bpl.dsc_bpl.state_master SET state_name = $1, last_modified_date = $2 WHERE state_id = $3";

@@ -91,57 +91,29 @@ exports.removeState = async (req, res) => {
   }
 };
 
-// exports.updateState = (req, res) => {
-//   const state_id = parseInt(req.params.id);
-//   const { state_name } = req.body;
-//   console.log(state_id, state_name);
-
-//   pool.query(queries.getStateById, [state_id], (error, results) => {
-//     const noStateFound = !results.rows.length;
-//     if (noStateFound) {
-//       res.json({ message: "State doesnot exist in the database" });
-//     } else {
-//       console.log("2nd", state_id, state_name);
-//       pool.query(
-//         queries.updateStudent,
-//         [state_name, state_id],
-//         (error, results) => {
-//           if (error) {
-//             console.log(error);
-//             res.status(400).json({
-//               message: error,
-//             });
-//           }
-//           if (results) {
-//             res.status(200).send("State updated successfully");
-//           }
-//         }
-//       );
-//     }
-//   });
-// };
-
-exports.updateState=async(req,res)=>{
+exports.updateState = async (req, res) => {
   try {
-    const { id, name } = req.params;
+    const { id } = req.params;
+    const { name } = req.body;
 
-    // const state = await pool.query(queries.getStateById, [id]);
-    // if (!state.rows.length) {
-    //   res.json({ message: "State doesnot exists" });
-    // }
-    
+    const state = await pool.query(queries.getStateById, [id]);
+    if (!state.rows.length) {
+      return res.json({
+        message: "State doesnot exists",
+      });
+    }
+
     const presentDate = new Date();
     const last_modified_date = presentDate;
-    // const updateState = await pool.query(queries.updateState,[name, id])
-    const updateState = await pool.query(`UPDATE dsc_bpl.dsc_bpl.state_master SET state_name = 'Puri' WHERE state_id = '14'`)
+
+    const updateState = await pool.query(queries.updateState, [name, last_modified_date, id]);
     res.status(200).json({
-      message: "State Updated"
-    })
+      message: "State has been Updated",
+    });
   } catch (err) {
-    console.log(err.message);
+    console.log(err);
     res.status(400).json({
       message: err.message,
     });
   }
-}
-
+};
