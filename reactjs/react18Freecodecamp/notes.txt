@@ -1,0 +1,13 @@
+install node js
+
+npx create-react-app appName
+npm start (normally: npm run commandName)
+
+jsx => javascript and xml
+
+<semantics(ex:section)></semantics(ex:section)>, <React.Fragments></React.Fragments>, <></>
+
+for => htmlFor, onclick => onclick, class => className
+
+
+
