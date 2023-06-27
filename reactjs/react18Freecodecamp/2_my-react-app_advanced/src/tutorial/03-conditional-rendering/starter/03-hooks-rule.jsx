@@ -16,5 +16,5 @@ const Example = () => {
   // }, []);
   return <h2>example</h2>;
 };
-
+ 
 export default Example;
