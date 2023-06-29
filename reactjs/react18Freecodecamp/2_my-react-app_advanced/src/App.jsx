@@ -1,10 +1,9 @@
-import Starter from './tutorial/03-conditional-rendering/starter/03-hooks-rule'
+import Example from "./tutorial/05-leverage-javascript/starter";
 
 function App() {
   return (
     <div className='container'>
-      <h2>Advanced React</h2>
-      <Starter/>
+      <Star/>
     </div>
   );
 }
