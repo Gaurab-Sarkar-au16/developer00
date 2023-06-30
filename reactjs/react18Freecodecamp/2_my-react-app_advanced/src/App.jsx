@@ -1,9 +1,9 @@
-import Example from "./tutorial/05-leverage-javascript/starter";
+import Starter from "./tutorial/06-forms/starter/04-other-inputs";
 
 function App() {
   return (
     <div className='container'>
-      <Star/>
+      <Starter/>
     </div>
   );
 }
