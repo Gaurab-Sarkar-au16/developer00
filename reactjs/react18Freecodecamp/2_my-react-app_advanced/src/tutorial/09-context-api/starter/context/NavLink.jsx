@@ -1,7 +1,6 @@
 import UserContainer from "./UserContainer";
 
-const NavLink = (props) => {
-  const { user, logout } = props;
+const NavLink = () => {
   return (
     <div className="nav-container">
       <ul className="nav-links">
@@ -13,7 +12,7 @@ const NavLink = (props) => {
         </li>
       </ul>
 
-      <UserContainer user={user} logout={logout} />
+      <UserContainer />
     </div>
   );
 };
