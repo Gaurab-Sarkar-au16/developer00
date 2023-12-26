@@ -1,0 +1,24 @@
+.App {
+  /* text-align: center; */
+}
+
+.menu-item {
+  cursor: pointer;
+  padding: 5px;
+  background: transparent;
+  border: 0px none;
+}
+
+.sub-menu {
+  padding-left: 20px;
+}
+
+.sub-menu--shrunk {
+  display: none;
+}
+
+.is-empty {
+  opacity: 0.6;
+  font-style: italic;
+  cursor: not-allowed;
+}
